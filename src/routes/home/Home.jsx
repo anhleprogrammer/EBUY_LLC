@@ -1,17 +1,32 @@
 import { useState, useEffect } from "react";
-import Home from "./routes/home/Home";
-import SignIn from "./routes/signin/SignIn";
-import { Routes, Route } from "react-router-dom";
-import Navigation from "./routes/navigation/Navigation";
-
-function Shop() {
-  return <p>My Shop</p>;
-}
-function Contact() {
-  return <p>Contact</p>;
-}
-
-function App() {
+import Directory from "../../components/directory/Directory";
+const categories = [
+  {
+    id: 1,
+    name: "Smartphones",
+  },
+  {
+    id: 2,
+    name: "Laptops",
+  },
+  {
+    id: 3,
+    name: "Home-Decoration",
+  },
+  {
+    id: 4,
+    name: "Furniture",
+  },
+  {
+    id: 5,
+    name: "Mens-Watches",
+  },
+  {
+    id: 6,
+    name: "Sunglasses",
+  },
+];
+function Home() {
   // const [data, setData] = useState([]);
   // const fetchData = async () => {
   //   const myData = await fetch("https://dummyjson.com/products?limit=100");
@@ -31,16 +46,7 @@ function App() {
   //   fetchData();
   // }, []);
 
-  return (
-    <Routes>
-      <Route path="/" element={<Navigation />}>
-        <Route index element={<Home />} />
-        <Route path="shop" element={<Shop />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
-        <Route path="signin" element={<SignIn />} />
-      </Route>
-    </Routes>
-  );
+  return <Directory categories={categories} />;
 }
 
-export default App;
+export default Home;

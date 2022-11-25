@@ -1,0 +1,18 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    .logo-container {
+        text-decoration: none;
+    }
+    .nav-links-container {
+        display: flex;
+        gap: 2rem;
+        .nav-link {
+            text-decoration: none;
+
+        }
+    }
+}
+

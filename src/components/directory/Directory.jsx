@@ -1,7 +1,7 @@
 import CategoryItem from "../category-item/CategoryItem";
 import "./directory.styles.scss";
 
-const Directory = ({ categories }) => {
+function Directory({ categories }) {
   return (
     <div className="categories-container">
       {categories.map((category) => (
@@ -9,5 +9,5 @@ const Directory = ({ categories }) => {
       ))}
     </div>
   );
-};
+}
 export default Directory;
