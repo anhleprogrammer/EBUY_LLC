@@ -3,6 +3,8 @@ import {
   createUserWithCredentials,
   createUserDocument,
 } from "../../utils/firebase/firebase.utils";
+import FormInput from "../form-input/FormInput";
+import "./sign-up.styles.scss";
 function SignUp() {
   const [formData, setFormData] = useState({
     displayName: "",
@@ -30,42 +32,37 @@ function SignUp() {
     } catch (e) {
       console.log(e);
     }
-    // return await result;
   };
-  console.log(formData);
   return (
-    <div>
+    <div className="sign-up-container">
       <h1>Sign Up</h1>
       <form onSubmit={handleSignUp}>
-        <label htmlFor="displayName"></label>
-        <input
+        <FormInput
+          label="Display Name"
           type="text"
           id="displayName"
           name="displayName"
           value={formData.displayName}
           onChange={handleChange}
         />
-
-        <label htmlFor="email"></label>
-        <input
+        <FormInput
+          label="Email"
           type="email"
           id="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
         />
-
-        <label htmlFor="password"></label>
-        <input
+        <FormInput
+          label="Password"
           type="password"
           id="password"
           name="password"
           value={formData.password}
           onChange={handleChange}
         />
-
-        <label htmlFor="confirmPassword"></label>
-        <input
+        <FormInput
+          label="Confirm Password"
           type="password"
           id="confirmPassword"
           name="confirmPassword"

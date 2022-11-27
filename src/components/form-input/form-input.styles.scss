@@ -1,0 +1,33 @@
+
+@mixin labelGoUp {
+    top:-5px;
+    font-size: 0.8rem;
+}
+.form-container{
+    position: relative;
+    .form-label{
+        position: absolute;
+        top: 20px;
+        left:10px;
+         transition: 300ms ease all;
+        &.up {
+            @include labelGoUp();
+        }
+    }
+    .form-input{
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid black;
+        margin:1rem 0;
+        padding:0.6rem;
+        font-size: 1rem;
+         &:focus {
+            outline: none;
+        }
+        &:focus ~ .form-label {
+            @include labelGoUp();
+        }
+     } 
+  
+ 
+}
