@@ -5,10 +5,10 @@ import {
 } from "../../utils/firebase/firebase.utils";
 import SignUp from "../../components/sign-up-form/SignUp";
 import SignIn from "../../components/sign-in-form/SignIn";
-
+import "./authentication.styles.scss";
 function Authentication() {
   return (
-    <div>
+    <div className="authentication-container">
       <SignIn />
       <SignUp />
     </div>

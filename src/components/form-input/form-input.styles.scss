@@ -1,15 +1,17 @@
 
 @mixin labelGoUp {
     top:-5px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 .form-container{
     position: relative;
+    margin: 1rem 0rem;
     .form-label{
         position: absolute;
         top: 20px;
         left:10px;
-         transition: 300ms ease all;
+        transition: 300ms ease all;
+        color:  #808080;
         &.up {
             @include labelGoUp();
         }
@@ -21,7 +23,7 @@
         margin:1rem 0;
         padding:0.6rem;
         font-size: 1rem;
-         &:focus {
+          &:focus {
             outline: none;
         }
         &:focus ~ .form-label {

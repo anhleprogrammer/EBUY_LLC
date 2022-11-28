@@ -5,6 +5,7 @@ import {
 } from "../../utils/firebase/firebase.utils";
 import FormInput from "../form-input/FormInput";
 import "./sign-up.styles.scss";
+import Button from "../button/Button";
 function SignUp() {
   const [formData, setFormData] = useState({
     displayName: "",
@@ -35,7 +36,7 @@ function SignUp() {
   };
   return (
     <div className="sign-up-container">
-      <h1>Sign Up</h1>
+      <h2>Sign up with your email and password</h2>
       <form onSubmit={handleSignUp}>
         <FormInput
           label="Display Name"
@@ -69,7 +70,7 @@ function SignUp() {
           value={formData.confirmPassword}
           onChange={handleChange}
         />
-        <button type="submit">Sign Up</button>
+        <Button type="submit">SIGN UP</Button>
       </form>
     </div>
   );
