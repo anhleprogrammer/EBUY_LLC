@@ -9,7 +9,6 @@ function CategoryItem({ category }) {
       </div>
       <div className="category-body-container">
         <h2>{category.name.replace("-", " ")}</h2>
-        <button>Shop Now</button>
       </div>
     </div>
   );

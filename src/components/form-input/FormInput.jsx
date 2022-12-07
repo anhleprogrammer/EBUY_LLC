@@ -10,7 +10,7 @@ function FormInput({ label, ...props }) {
         htmlFor={props.id}
       >
         {label}
-      </label>{" "}
+      </label>
     </div>
   );
 }

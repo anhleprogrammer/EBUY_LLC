@@ -13,6 +13,13 @@ function SignUp() {
     password: "",
     confirmPassword: "",
   });
+  const resetForm = () =>
+    setFormData({
+      displayName: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    });
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -29,7 +36,7 @@ function SignUp() {
       );
 
       createUserDocument(result.user, { displayName: formData.displayName });
-      console.log(result);
+      resetForm();
     } catch (e) {
       console.log(e);
     }

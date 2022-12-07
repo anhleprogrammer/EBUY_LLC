@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useContext } from "react";
 import {
   signInWithGoogle,
   createUserDocument,
@@ -7,11 +7,14 @@ import {
 import FormInput from "../form-input/FormInput";
 import Button from "../button/Button";
 import "./sign-in.styles.scss";
+import { UserContext } from "../../contexts/UserContext";
 function SignIn() {
+  const { setUser } = useContext(UserContext);
   const logGoogle = async () => {
     try {
-      const { user } = await signInWithGoogle();
+      const { user, setUser } = await signInWithGoogle();
       const userDocRef = await createUserDocument(user);
+      setUser(user);
       console.log(user);
     } catch (e) {
       console.log(e);
@@ -21,6 +24,7 @@ function SignIn() {
     email: "",
     password: "",
   });
+  const resetForm = () => setFormData({ email: "", password: "" });
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -32,10 +36,10 @@ function SignIn() {
         formData.email,
         formData.password
       );
-      console.log(response);
+      resetForm();
+      setUser(response);
       alert("Login successful");
     } catch (e) {
-      console.log(e);
       alert(e);
     }
   };
