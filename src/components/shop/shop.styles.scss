@@ -1,4 +1,7 @@
 .shop-container {
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    border-left: solid 0.1px grey;
+    border-top: solid 0.1px grey;
+
  }
