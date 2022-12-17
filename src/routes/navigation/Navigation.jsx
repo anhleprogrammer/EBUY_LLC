@@ -15,11 +15,10 @@ function Navigation() {
     const res = await signOutUser();
     setUser(null);
   };
-  console.log(user);
+
   return (
     <>
       <div className="navigation">
-        {" "}
         <Link className="logo-container" to="/">
           <p>EBUY_LLC</p>
         </Link>

@@ -5,6 +5,10 @@ export const ProductContext = createContext({
   setProduct: () => null,
 });
 
+const generateRandom = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState(null);
   const fetchData = async () => {
@@ -19,11 +23,17 @@ export const ProductProvider = ({ children }) => {
         item.category === "mens-watches" ||
         item.category === "sunglasses"
     );
+    for (let product of result) {
+      product.rating = generateRandom(1, 5);
+      product.reviews = generateRandom(120, 12000);
+    }
+
     setProducts(result);
   };
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <ProductContext.Provider value={products}>
       {children}
