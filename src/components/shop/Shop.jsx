@@ -4,13 +4,12 @@ import Product from "../product/Product";
 import "./shop.styles.scss";
 
 function Shop() {
-  const productList = useContext(ProductContext);
+  const { products } = useContext(ProductContext);
 
-  console.log(productList);
   return (
     <div className="shop-container">
-      {productList &&
-        productList.map((product) => (
+      {products &&
+        products.map((product) => (
           <Product key={product.id} product={product} />
         ))}
     </div>

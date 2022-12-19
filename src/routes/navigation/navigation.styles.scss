@@ -6,6 +6,9 @@
     padding: 1rem 2rem;
     .logo-container {
         text-decoration: none;
+        .logo {
+            color:blue;
+        }
     }
     .nav-links-container {
         display: flex;

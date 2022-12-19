@@ -3,25 +3,28 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+
     padding:1rem;
-    background-color:  #f2f2f2;
-    .image-container {
+      .image-container {
          margin: auto;
-        // width: 100%;
-        max-width: 400px;
-        // max-height: 50%;
-    .image {
-        width: 100%;
-         object-fit: cover;
-        }       
+         width: 350px;
+         max-height: 250px;
+         cursor:pointer;
+
+         .image {
+            width: 100%;
+            object-fit: cover;
+            max-height: 100%;
+         }       
     }
     .category-body-container {
         bottom: 10px;
         button {
+            cursor:pointer;
+
             border:none;
             border-radius: 1rem;
             padding: 1rem 2rem;
-            cursor:pointer;
             background-color:#3385ff;
             color:white
         }

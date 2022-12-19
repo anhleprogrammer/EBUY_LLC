@@ -14,29 +14,19 @@ export const ProductProvider = ({ children }) => {
   const fetchData = async () => {
     const myData = await fetch("https://dummyjson.com/products?limit=100");
     let result = await myData.json();
-    result = result.products.filter(
-      (item) =>
-        item.category === "smartphones" ||
-        item.category === "laptops" ||
-        item.category === "home-decoration" ||
-        item.category === "furniture" ||
-        item.category === "mens-watches" ||
-        item.category === "sunglasses"
-    );
-    for (let product of result) {
+
+    for (let product of result.products) {
       product.rating = generateRandom(1, 5);
       product.reviews = generateRandom(120, 12000);
     }
 
-    setProducts(result);
+    setProducts(result.products);
   };
   useEffect(() => {
     fetchData();
   }, []);
-
+  const value = { products, setProducts };
   return (
-    <ProductContext.Provider value={products}>
-      {children}
-    </ProductContext.Provider>
+    <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
   );
 };
