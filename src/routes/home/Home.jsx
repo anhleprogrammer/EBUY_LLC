@@ -3,9 +3,7 @@ import Directory from "../../components/directory/Directory";
 import { CategoryContext } from "../../contexts/CategoryContext";
 
 function Home() {
-  const { category } = useContext(CategoryContext);
-
-  return <Directory categories={category} />;
+  return <Directory />;
 }
 
 export default Home;

@@ -20,11 +20,15 @@ function Navigation() {
     <>
       <div className="navigation">
         <Link className="logo-container" to="/">
-          <p className="logo">Friendly Commerce</p>
+          <p className="logo">EbuyLLC</p>
         </Link>
+        {/* <input className="search-box" /> */}
         <div className="nav-links-container">
+          <Link className="nav-link" to="/category">
+            Category
+          </Link>
           <Link className="nav-link" to="/shop">
-            Shop
+            Shop All
           </Link>
           {user ? (
             <span className="nav-link" onClick={signOutHandler}>

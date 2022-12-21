@@ -1,11 +1,14 @@
+import { useContext } from "react";
 import CategoryItem from "../category-item/CategoryItem";
 import "./directory.styles.scss";
+import { CategoryContext } from "../../contexts/CategoryContext";
 
-function Directory({ categories }) {
-  console.log(categories);
+function Directory() {
+  const categoryContext = useContext(CategoryContext);
+
   return (
     <div className="categories-container">
-      {categories.map((category) => (
+      {categoryContext.category.map((category) => (
         <CategoryItem key={category.id} category={category} />
       ))}
     </div>
