@@ -12,7 +12,7 @@ function CategoryPage() {
       {products &&
         products
           .filter((product) => product.category === name)
-          .map((product) => <Product key={product.id} product={product} />)}
+          .map((product) => <Product product={product} />)}
     </div>
   );
 }

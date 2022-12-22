@@ -1,0 +1,54 @@
+.container {
+     width: 90%;
+    .container-product {
+        display: flex;
+        justify-content: space-between;
+        .small-img{
+            img {
+                object-fit: cover;
+                width: 100px;
+                height: 100px;
+                display: block;
+                cursor: pointer;
+                padding: 1rem;
+                &:hover {
+                    border: solid 1px orange;
+                }
+                &:active {
+                    border: solid 1px orange;
+                }
+            }
+        }
+        .thumbnail {
+
+            img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
+        }
+        .title {
+            font-size: larger;
+            font-weight: 900;
+        }
+    }
+    .container-guarantee {
+        border: 0.2px solid gray;
+        padding: 1rem;
+    }
+    .container-seller {
+        margin-top: 1rem;
+        border: 0.2px solid gray;
+        padding: 1rem;
+        .seller-name {
+            display: flex;
+            align-items: center;
+            .star {
+                color: orange;
+            }
+        }
+
+    }
+
+
+}

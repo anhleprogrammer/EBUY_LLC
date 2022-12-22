@@ -48,7 +48,9 @@ function Navigation() {
         </div>
         {cartOpen && <CartDropDown />}
       </div>
-      <Outlet />
+      <div className="outlet-container">
+        <Outlet />
+      </div>
     </>
   );
 }
