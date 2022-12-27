@@ -17,7 +17,9 @@ function Product({ product, star }) {
       <img src={product.images[0]} alt={product.title} />
       <div>
         <p>{product.title}</p>
-        <Star rating={product.rating} reviews={product.reviews} />
+        <div className="star-container">
+          <Star rating={product.rating} reviews={product.reviews} />
+        </div>
 
         <p className="price">${product.price}</p>
         <p>

@@ -7,20 +7,29 @@
     font-weight: bold;
     background-color: black;
     transition: all 0.2s;
-      text-align:center;
+    text-align:center;
   
   &:hover {
     background-color: white;
     color: black;
     border: 1px solid black;
   }
-    &.google-sign-in {
-        background-color: #4285f4;
-        color: white;
-    
-        &:hover {
-          background-color: #357ae8;
-          border: none;
-        }
+  &.google-sign-in {
+      background-color: #4285f4;
+      color: white;
+  
+      &:hover {
+        background-color: #357ae8;
+        border: none;
       }
+  }
+  &.add-to-cart {
+    background-color: #4285f4;
+    color: white;
+    border-radius: 10px;
+      &:hover {
+        background-color: #357ae8;
+        border: none;
+      }
+  }
 }

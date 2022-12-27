@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { Star } from "../star/Star";
 import { AiFillStar } from "react-icons/ai";
 import { SiAdguard } from "react-icons/si";
+import Button from "../button/Button";
 function ProductPage() {
   const { name } = useParams();
   const { products } = useContext(ProductContext);
@@ -34,12 +35,15 @@ function ProductPage() {
             <div className="thumbnail">{thumbnail}</div>
             <div className="container-product-info">
               <div className="title">{product.title}</div>
-              <div>category</div>
-              <span>star here</span>
-              <span>rating here</span>
-              <p>price</p>
+              <div>{product.category.toUpperCase()}</div>
+              <div>
+                <Star rating={product.rating} reviews={product.reviews} />
+              </div>
+              <div>${product.price}</div>
               <div>{product.description}</div>
-              <button>ADD TO CART</button>
+              <div>
+                <Button buttonType="addToCart">ADD TO CART</Button>
+              </div>
             </div>
             <div>
               <div className="container-guarantee">
