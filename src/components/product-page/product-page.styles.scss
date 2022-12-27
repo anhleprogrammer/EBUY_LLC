@@ -2,9 +2,9 @@
      width: 90%;
     .container-product {
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
+        gap:1.6rem;
         .small-img{
-            
             img {
                 object-fit: cover;
                 width: 100px;
@@ -21,8 +21,8 @@
             }
         }
         .thumbnail {
-            max-height: 500px;
-            max-width: 30%;
+            height: 500px;
+            width: 40%;
             img {
                 object-fit: cover;
                 height: 100%;
@@ -41,23 +41,52 @@
             font-weight: 900;
         }
     }
-    .container-guarantee {
-        border: 0.2px solid gray;
-        padding: 1rem;
-    }
-    .container-seller {
-        margin-top: 1rem;
-        border: 0.2px solid gray;
-        padding: 1rem;
-        .seller-name {
-            display: flex;
-            align-items: center;
-            .star {
-                color: orange;
+    .container-right-most {
+        width: 20%;
+        .container-guarantee {
+            border: 0.2px solid gray;
+           padding: 1rem;
+           >:first-child {
+               font-weight: 900;
+               font-size:large
+           }
+           & .inner-container {
+               display: flex;
+               align-items: center;
+                > :first-child {
+                   width: 20%;
+                   font-size: larger;
+                   color: blue;
+                }
+          }
+       }
+        .container-seller {
+            margin-top: 1rem;
+            border: 0.2px solid gray;
+            padding: 1rem;
+            & :first-child {
+                font-weight: 900;
+                font-size: large;
+            }
+            .seller-name {
+                color: blue;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                .star {
+                    color: orange;
+                }
             }
         }
-
     }
-
-
+    .container-related {
+        >:first-child {
+            font-weight: 900;
+            font-size: large;
+        }
+        .related-product-container {
+            display: flex;
+            justify-content: space-between;
+         }
+    }
 }

@@ -10,11 +10,12 @@ function ProductPage() {
   const { name } = useParams();
   const { products } = useContext(ProductContext);
   const product = products.find((product) => product.title === name);
-
+  const relatedProduct = products.filter(
+    (p) => p.category === product.category && p.title !== name
+  );
   const [thumbnail, setThumbnail] = useState(
     <img src={product.thumbnail} alt={product.title} />
   );
-  console.log(product);
   const hoverHandler = (e) => {
     setThumbnail(<img src={e.target.src} alt={product.title} />);
   };
@@ -45,10 +46,10 @@ function ProductPage() {
                 <Button buttonType="addToCart">ADD TO CART</Button>
               </div>
             </div>
-            <div>
+            <div className="container-right-most">
               <div className="container-guarantee">
                 <p>Shop with confidence</p>
-                <div>
+                <div className="inner-container">
                   <SiAdguard />
                   <div>
                     <p>eBuy Money Back Guarantee</p>
@@ -63,13 +64,22 @@ function ProductPage() {
                   anhleprogrammer (9000 <AiFillStar className="star" />)
                 </a>
                 <p>100% Positive feedback</p>
-                <p>Save this seller</p>
-                <p>Contact seller</p>
-                <p>See other items</p>
               </div>
             </div>
           </div>
-          <div className="container-related">related products</div>
+          <div className="container-related">
+            <p>Related Product</p>
+            <div className="related-product-container">
+              {relatedProduct &&
+                relatedProduct.map((related) => (
+                  <div>
+                    <img src={related.image} alt={related.title} />
+                    <p>{related.title}</p>
+                    <p>{related.price}</p>
+                  </div>
+                ))}
+            </div>
+          </div>
         </div>
       )}
     </>
