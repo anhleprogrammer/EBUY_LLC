@@ -1,10 +1,12 @@
 .container {
-     width: 90%;
+    width: 90%;
+
     .container-product {
         display: flex;
         // justify-content: space-between;
-        gap:1.6rem;
-        .small-img{
+        gap: 1.6rem;
+
+        .small-img {
             img {
                 object-fit: cover;
                 width: 100px;
@@ -12,81 +14,98 @@
                 display: block;
                 cursor: pointer;
                 padding: 1rem;
+
                 &:hover {
                     border: solid 1px orange;
                 }
+
                 &:active {
                     border: solid 1px orange;
                 }
             }
         }
+
         .thumbnail {
             height: 500px;
             width: 40%;
+
             img {
                 object-fit: cover;
                 height: 100%;
                 width: 100%;
             }
         }
+
         .container-product-info {
             display: flex;
             flex-direction: column;
-            gap:1rem;
+            gap: 1rem;
             width: 25%;
             justify-content: flex-start;
         }
+
         .title {
             font-size: larger;
             font-weight: 900;
         }
     }
+
     .container-right-most {
         width: 20%;
+
         .container-guarantee {
             border: 0.2px solid gray;
-           padding: 1rem;
-           >:first-child {
-               font-weight: 900;
-               font-size:large
-           }
-           & .inner-container {
-               display: flex;
-               align-items: center;
+            padding: 1rem;
+
+            >:first-child {
+                font-weight: 900;
+                font-size: large
+            }
+
+            & .inner-container {
+                display: flex;
+                align-items: center;
+
                 > :first-child {
-                   width: 20%;
-                   font-size: larger;
-                   color: blue;
+                    width: 20%;
+                    font-size: larger;
+                    color: blue;
                 }
-          }
-       }
+            }
+        }
+
         .container-seller {
             margin-top: 1rem;
             border: 0.2px solid gray;
             padding: 1rem;
+
             & :first-child {
                 font-weight: 900;
                 font-size: large;
             }
+
             .seller-name {
                 color: blue;
                 cursor: pointer;
                 display: flex;
                 align-items: center;
+
                 .star {
                     color: orange;
                 }
             }
         }
     }
+
     .container-related {
         >:first-child {
             font-weight: 900;
             font-size: large;
         }
+
         .related-product-container {
             display: flex;
             justify-content: space-between;
-         }
+        }
     }
 }

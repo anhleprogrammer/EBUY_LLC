@@ -15,10 +15,12 @@
             gap:2rem;
             cursor: pointer;
             .filter-container {
+                position: relative;
                 display: flex;
                 align-items: center;
             }
             .sort-container {
+                position: relative;
                 display: flex;
                 align-items: center;
             }
