@@ -10,20 +10,27 @@
         justify-content: space-between;
         font-weight: 800;
         font-size: larger;
+        padding: 0 2rem;
         .filter-sort-container {
             display: flex;
-            gap:2rem;
+             width: 15%;
+             gap:1rem;
             cursor: pointer;
+            align-items: center;
+            position: relative;
             .filter-container {
-                position: relative;
                 display: flex;
                 align-items: center;
+                 padding: 0 0.6rem;
             }
             .sort-container {
-                position: relative;
+                // position: relative;
                 display: flex;
                 align-items: center;
+                padding: 0 0.6rem;
+
             }
+ 
         }
     }
  }

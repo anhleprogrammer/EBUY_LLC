@@ -1,12 +1,14 @@
 .modal-container {
     width: 200px;
-    height: 100px;
+    // height: 400px;
     background-color: blue;
     position:absolute;
     display: none;
     z-index: 10;
-    &.active {
+    top: 4.2rem;
+     &.active {
         display: block;
     }
+  
 }
  

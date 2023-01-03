@@ -17,24 +17,31 @@ function Shop() {
         <div className="filter-sort-container">
           <div
             className="filter-container"
-            onClick={() => {
+            onMouseEnter={() => {
               setModal([!modal[0], false]);
+            }}
+            onMouseLeave={() => {
+              setModal([false, false]);
             }}
           >
             <AiFillFilter />
             <p>Filter</p>
-            {modal[0] === true && <Modal modal={modal} />}
           </div>
+          |
           <div
             className="sort-container"
-            onClick={() => {
+            onMouseEnter={() => {
               setModal([false, !modal[1]]);
+            }}
+            onMouseLeave={() => {
+              setModal([false, false]);
             }}
           >
             <BiSortAlt2 />
             <p>Sort</p>
-            {modal[1] === true && <Modal modal={modal} />}
           </div>
+          {modal[0] === true && <Modal modal={modal} type="filter" />}
+          {modal[1] === true && <Modal modal={modal} type="sort" />}
         </div>
       </div>
       <div className="shop-container-body">
