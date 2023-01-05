@@ -1,9 +1,13 @@
-import { useContext } from "react";
-import Directory from "../../components/directory/Directory";
-import { CategoryContext } from "../../contexts/CategoryContext";
-
+import Carousel from "../../components/carousel/Carousel";
+import "./home.styles.scss";
 function Home() {
-  return <Directory />;
+  return (
+    <div className="home-container">
+      <div className="carousel">
+        <Carousel />
+      </div>
+    </div>
+  );
 }
 
 export default Home;
