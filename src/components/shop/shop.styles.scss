@@ -1,36 +1,11 @@
 .shop-container {
- 
+    display: flex;
+    width: 100%;
+    // justify-content: center;
     .shop-container-body {
         display: grid;
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(6,1fr);
         width: 100%;
-    }
-    .shop-container-header {
-        display: flex;
-        justify-content: space-between;
-        font-weight: 800;
-        font-size: larger;
-        padding: 0 2rem;
-        .filter-sort-container {
-            display: flex;
-             width: 15%;
-             gap:1rem;
-            cursor: pointer;
-            align-items: center;
-            position: relative;
-            .filter-container {
-                display: flex;
-                align-items: center;
-                 padding: 0 0.6rem;
-            }
-            .sort-container {
-                // position: relative;
-                display: flex;
-                align-items: center;
-                padding: 0 0.6rem;
-
-            }
- 
-        }
+        overflow:scroll;
     }
  }

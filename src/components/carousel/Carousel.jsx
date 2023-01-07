@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import "./carousel.styles.scss";
-function Carousel() {
+import { AiOutlineArrowRight } from "react-icons/ai";
+function Carousel({ img }) {
   const [slide, setSlide] = useState(0);
   return (
     <div className="carousel-container">
       <div className="img-container">
-        <img src="./sale.jpg" alt="" />
+        <img src="./home1.jpg" alt="" />
       </div>
-      <button className="left">a</button>
-      <button className="right">b</button>
+      <p className="shopnow-container">Shop Now</p>
+
+      {/* <p className="text-container">Up to 50% OFF</p> */}
+
+      <p className="left">&lt;</p>
+      <p className="right">&gt;</p>
     </div>
   );
 }

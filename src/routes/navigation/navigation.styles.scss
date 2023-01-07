@@ -3,17 +3,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.2rem 4rem;
+    padding: 0rem 4rem;
     border-bottom: 1px solid  #e6e6e6;
     font-weight: bolder;
     background-color: white;
     z-index: 10;
     width: 100%;
-    color: blue;
+    color: white;
+    background-color: black;
+    font-weight: bolder;
     .logo-container {
         text-decoration: none;
         .logo {
-            color:blue;
+            color:white;
         }
     }
     .nav-links-container {
@@ -22,6 +24,13 @@
         align-items: center;
         .nav-link {
             text-decoration: none;
+            &:visited {
+                color: #dee2e6;
+            }
+            &:hover {
+                color: blue;
+                color: white;
+            }
         }
     }
     .cart-container {
