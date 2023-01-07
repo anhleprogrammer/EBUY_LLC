@@ -5,8 +5,8 @@ import "./shop.styles.scss";
 
 function Shop({ category }) {
   let { products } = useContext(ProductContext);
-
-  products = products.filter((product) => product.category === category);
+  if (products)
+    products = products.filter((product) => product.category === category);
   return (
     <div className="shop-container">
       <div className="shop-container-body">
