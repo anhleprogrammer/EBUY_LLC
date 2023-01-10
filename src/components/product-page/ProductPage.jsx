@@ -1,6 +1,7 @@
-import { React, useContext, useState } from "react";
+import { React, useContext, useState, useEffect } from "react";
 import "./product-page.styles.scss";
 import { ProductContext } from "../../contexts/ProductContext";
+import Product from "../product/Product";
 import { useParams } from "react-router-dom";
 import { Star } from "../star/Star";
 import { AiFillStar } from "react-icons/ai";
@@ -19,6 +20,10 @@ function ProductPage() {
   const hoverHandler = (e) => {
     setThumbnail(<img src={e.target.src} alt={product.title} />);
   };
+  useEffect(() => {
+    setThumbnail(<img src={product.thumbnail} alt={product.title} />);
+  }, [product]);
+
   return (
     <>
       {product && (
@@ -71,13 +76,7 @@ function ProductPage() {
             <p>Related Product</p>
             <div className="related-product-container">
               {relatedProduct &&
-                relatedProduct.map((related) => (
-                  <div>
-                    <img src={related.image} alt={related.title} />
-                    <p>{related.title}</p>
-                    <p>{related.price}</p>
-                  </div>
-                ))}
+                relatedProduct.map((related) => <Product product={related} />)}
             </div>
           </div>
         </div>

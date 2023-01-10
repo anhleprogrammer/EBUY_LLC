@@ -12,4 +12,12 @@
     .shop-container {
           display: block;
      }
+     .shop-header {
+          display: flex;
+          width: 200px;
+          justify-content: space-around;
+          font-size: larger;
+          font-weight: 900;
+      
+     }
 }

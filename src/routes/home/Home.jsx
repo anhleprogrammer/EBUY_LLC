@@ -8,9 +8,29 @@ function Home() {
         <Carousel />
       </div>
       <div className="shop-container">
-        <Shop category="smartphones" />
-        <Shop category="laptops" />
-        <Shop category="tops" />
+        <div>
+          <div className="shop-header">
+            <p>Phone</p>
+            <p>See all</p>
+          </div>
+
+          <Shop category="smartphones" />
+        </div>
+        <div>
+          <div className="shop-header">
+            <p>Laptop</p>
+            <p>See all</p>
+          </div>
+          <Shop category="laptops" />
+        </div>
+
+        <div>
+          <div className="shop-header">
+            <p>Men Watches</p>
+            <p>See all</p>
+          </div>
+          <Shop category="mens-watches" />
+        </div>
       </div>
     </div>
   );
