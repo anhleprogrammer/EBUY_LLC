@@ -6,6 +6,7 @@ import Shop from "./components/shop/Shop";
 import Directory from "./components/directory/Directory";
 import CategoryPage from "./components/category-page/CategoryPage.jsx";
 import ProductPage from "./components/product-page/ProductPage.jsx";
+import "./App.css";
 function App() {
   return (
     <Routes>
