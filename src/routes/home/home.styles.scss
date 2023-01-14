@@ -16,7 +16,10 @@
                display: flex;
                overflow: scroll;
                overflow-y: hidden;
-                height: 350px;
+               height: 350px;
+               a {
+                    text-decoration: none;
+               }
                .img-container {
                     position: relative;
                     width: 500px;
@@ -30,7 +33,6 @@
                          button {
                               cursor: pointer;
                               color: blue;
-
                               padding: 1rem;
                               width: 100px;
                               font-size: larger;
@@ -42,6 +44,9 @@
                               justify-content: center;
                               gap: 0.2rem;
                               opacity: 0.9;
+                              &:hover {
+                                   opacity: 1;
+                                }
                          }
                     }
                     .img-left {

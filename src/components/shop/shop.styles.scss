@@ -1,11 +1,28 @@
 .shop-container {
     display: flex;
     width: 100%;
+    position: relative;
+
     // justify-content: center;
     .shop-container-body {
         display: grid;
         grid-template-columns: repeat(6,1fr);
         width: 100%;
-        // overflow:scroll;
+        // overflow:scroll;\
+        .left-arr {
+            position: absolute;   
+            left:1rem;
+            top: 40%;
+            font-size: 69px;
+              cursor: pointer;
+        }
+        .right-arr {
+            position: absolute;
+            right:1rem;
+            top: 40%;
+            font-size: 69px;
+             opacity: 0.5;
+            cursor: pointer;
+        }
     }
  }
