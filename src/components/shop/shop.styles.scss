@@ -2,13 +2,15 @@
     display: flex;
     width: 100%;
     position: relative;
-
-    // justify-content: center;
-    .shop-container-body {
+    display: flex;
+    overflow:scroll;
+    overflow-y: hidden;
+    margin-bottom: 2rem;
+    height: 350px;
+     .shop-container-body {
         display: grid;
         grid-template-columns: repeat(6,1fr);
         width: 100%;
-        // overflow:scroll;\
         .left-arr {
             position: absolute;   
             left:1rem;
@@ -21,7 +23,7 @@
             right:1rem;
             top: 40%;
             font-size: 69px;
-             opacity: 0.5;
+            opacity: 0.5;
             cursor: pointer;
         }
     }

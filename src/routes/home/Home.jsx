@@ -1,5 +1,6 @@
 import Carousel from "../../components/carousel/Carousel";
 import Shop from "../../components/shop/Shop";
+import Footer from "../../components/footer/Footer";
 import "./home.styles.scss";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -13,7 +14,7 @@ function Home() {
       <div className="shop-section-container">
         <div className="shop-container">
           <div className="img-container">
-            <img className="img-left" src="./phone.jpg" alt="" />,
+            <img className="img-left" src="./phone.jpg" alt="" />
             <div className="see-all-container">
               <Link to="/category/smartphones">
                 <button>See all</button>
@@ -47,6 +48,7 @@ function Home() {
           <Shop category="mens-watches" />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,12 @@
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    >div {
+        width: 20%;
+         ul {
+            cursor: pointer;
+            list-style: none;
+            padding-left: 0rem;
+        }
+    }
+}
