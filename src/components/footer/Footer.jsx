@@ -1,13 +1,19 @@
 import React from "react";
 import "./footer.styles.scss";
+import {
+  AiOutlineTwitter,
+  AiFillFacebook,
+  AiFillLinkedin,
+  AiFillInstagram,
+} from "react-icons/ai";
 function Footer() {
   return (
     <div className="footer-container">
       <div>
         <h3>Buy and Sell on EbuyLLC</h3>
         <ul>
-          <li>How to buy</li>
-          <li>How to sell</li>
+          <li>How to Buy</li>
+          <li>How to Sell</li>
           <li>Memberships</li>
           <li>Partner Program</li>
         </ul>
@@ -15,38 +21,42 @@ function Footer() {
       <div>
         <h3>Help</h3>
         <ul>
-          <li>How to buy</li>
-          <li>How to sell</li>
-          <li>Memberships</li>
-          <li>Partner Program</li>
+          <li>Contact Us</li>
+          <li>Shipping Services</li>
+          <li>Payment Options</li>
+          <li>Return & Exchanges</li>
         </ul>
       </div>
       <div>
         {" "}
         <h3>Company</h3>
         <ul>
-          <li>How to buy</li>
-          <li>How to sell</li>
-          <li>Memberships</li>
-          <li>Partner Program</li>
+          <li>About EbuyLLC</li>
+          <li>Careers</li>
+          <li>Corporate Information</li>
         </ul>
       </div>
       <div>
         <h3>Connect with us</h3>
         <ul>
-          <li>How to buy</li>
-          <li>How to sell</li>
-          <li>Memberships</li>
-          <li>Partner Program</li>
+          <li>
+            <AiOutlineTwitter className="logo" />
+            Twitter
+          </li>
+          <li>
+            <AiFillLinkedin className="logo" />
+            Linkedin
+          </li>
+          <li>
+            <AiFillFacebook className="logo" />
+            Facebook
+          </li>
+          <li>
+            {" "}
+            <AiFillInstagram className="logo" />
+            Instagram
+          </li>
         </ul>
-      </div>
-      <div>
-        <h3>SIGN UP FOR EBUY UPDATES</h3>
-        <p>
-          By entering your email address below, you consent to receiving our
-          newsletter with access to our latest collections, events and
-          initiatives. More details on this are provided in our Privacy Policy
-        </p>
       </div>
     </div>
   );

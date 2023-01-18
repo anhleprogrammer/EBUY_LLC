@@ -1,6 +1,7 @@
 import { React, useContext, useState, useEffect } from "react";
 import "./product-page.styles.scss";
 import { ProductContext } from "../../contexts/ProductContext";
+
 import Product from "../product/Product";
 import { useParams } from "react-router-dom";
 import { Star } from "../star/Star";
@@ -10,18 +11,26 @@ import Button from "../button/Button";
 function ProductPage() {
   const { name } = useParams();
   const { products } = useContext(ProductContext);
-  const product = products.find((product) => product.title === name);
-  const relatedProduct = products.filter(
-    (p) => p.category === product.category && p.title !== name
-  );
-  const [thumbnail, setThumbnail] = useState(
-    <img src={product.thumbnail} alt={product.title} />
-  );
+
+  const product =
+    products && products.find((product) => product.title === name);
+  const relatedProduct =
+    products &&
+    products.filter((p) => p.category === product.category && p.title !== name);
+
+  let thumbnailElement;
+  if (product) {
+    thumbnailElement = <img src={product.thumbnail} alt={product.title} />;
+  } else {
+    thumbnailElement = <p>Not Available</p>;
+  }
+
+  const [localThumbnail, setThumbnail] = useState(thumbnailElement);
   const hoverHandler = (e) => {
     setThumbnail(<img src={e.target.src} alt={product.title} />);
   };
   useEffect(() => {
-    setThumbnail(<img src={product.thumbnail} alt={product.title} />);
+    setThumbnail(thumbnailElement);
   }, [product]);
 
   return (
@@ -38,7 +47,7 @@ function ProductPage() {
                 />
               ))}
             </div>
-            <div className="thumbnail">{thumbnail}</div>
+            <div className="thumbnail">{localThumbnail}</div>
             <div className="container-product-info">
               <div className="title">{product.title}</div>
               <div>{product.category.toUpperCase()}</div>
@@ -59,13 +68,22 @@ function ProductPage() {
                   <div>
                     <p>eBuy Money Back Guarantee</p>
                     <p>Get the item you ordered or get your money back.</p>
-                    <a href="google.com">Learn more</a>
+                    <a
+                      target="_blank"
+                      href="https://portfolio-anhleprogrammer.vercel.app/projects"
+                    >
+                      Learn more
+                    </a>
                   </div>
                 </div>
               </div>
               <div className="container-seller">
                 <p>Seller Information</p>
-                <a className="seller-name">
+                <a
+                  className="seller-name"
+                  target="_blank"
+                  href="https://portfolio-anhleprogrammer.vercel.app/projects"
+                >
                   anhleprogrammer (9000 <AiFillStar className="star" />)
                 </a>
                 <p>100% Positive feedback</p>

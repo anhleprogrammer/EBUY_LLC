@@ -48,7 +48,6 @@ function Home() {
           <Shop category="mens-watches" />
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
