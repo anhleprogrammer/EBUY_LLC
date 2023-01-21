@@ -17,7 +17,7 @@ function App() {
           <Route path="category" element={<Directory />} />
           <Route path="category/:name" element={<CategoryPage />} />
           <Route path="product/:name" element={<ProductPage />} />
-          <Route path="shop" element={<Shop />} />
+          {/* <Route path="shop" element={<Shop />} /> */}
           <Route path="authentication" element={<Authentication />} />
         </Route>
       </Routes>

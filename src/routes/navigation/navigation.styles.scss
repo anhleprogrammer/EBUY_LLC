@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0rem 4rem;
+    padding: 0.2rem 4rem;
     border-bottom: 1px solid  #e6e6e6;
     font-weight: bolder;
      z-index: 10;
@@ -24,6 +24,7 @@
         color: white;
         .nav-link {
             text-decoration: none;
+            cursor: pointer;
             &:visited {
                 color: #dee2e6;
             }
@@ -38,8 +39,8 @@
     }
 }
 .outlet-container {
-     display: flex;
+    display: flex;
     justify-content: center;
     padding-top: 6rem;
- }
+   }
 

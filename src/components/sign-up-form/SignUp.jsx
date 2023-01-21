@@ -34,10 +34,10 @@ function SignUp() {
         formData.email,
         formData.password
       );
-
       createUserDocument(result.user, { displayName: formData.displayName });
       resetForm();
     } catch (e) {
+      alert(e);
       console.log(e);
     }
   };

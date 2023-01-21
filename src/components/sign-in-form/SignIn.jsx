@@ -9,28 +9,31 @@ import Button from "../button/Button";
 import "./sign-in.styles.scss";
 import { UserContext } from "../../contexts/UserContext";
 function SignIn() {
-  const { setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const logGoogle = async () => {
     try {
-      const { user, setUser } = await signInWithGoogle();
+      const { user } = await signInWithGoogle();
+
       const userDocRef = await createUserDocument(user);
       setUser(user);
-      console.log(user);
     } catch (e) {
       console.log(e);
     }
   };
+  // console.log(user, setUser);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
-  const resetForm = () => setFormData({ email: "", password: "" });
+  const resetForm = () => {
+    setFormData({ email: "", password: "" });
+  };
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   const handleLogin = async (e) => {
     e.preventDefault();
-    //password match when password input entered match with database
+
     try {
       const response = await signInWithCredentials(
         formData.email,
@@ -38,17 +41,17 @@ function SignIn() {
       );
       resetForm();
       setUser(response);
-      alert("Login successful");
     } catch (e) {
+      console.log(e);
       alert(e);
     }
   };
   return (
     <div className="sign-in-container">
       <h2>Sign in to your account</h2>
-      <form onSubmit={handleLogin}>
+      <form>
         <FormInput
-          label="Email"
+          label="Email: test@gmail.com"
           type="email"
           name="email"
           value={formData.email}
@@ -57,15 +60,14 @@ function SignIn() {
         />
         <FormInput
           name="password"
-          label="Password"
+          label="Password: 123456"
           type="password"
           value={formData.password}
           onChange={handleChange}
           required
         />
-        <Button>SIGN IN</Button>
-
-        <Button buttonType="google" onClick={() => logGoogle()}>
+        <Button onClick={handleLogin}>SIGN IN</Button>
+        <Button type="button" buttonType="google" onClick={() => logGoogle()}>
           SIGN IN WITH GOOGLE
         </Button>
       </form>

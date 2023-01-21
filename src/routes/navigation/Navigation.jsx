@@ -29,9 +29,9 @@ function Navigation() {
           </Link>
 
           {user ? (
-            <span className="nav-link" onClick={signOutHandler}>
+            <Link className="nav-link" onClick={signOutHandler}>
               Sign Out
-            </span>
+            </Link>
           ) : (
             <Link className="nav-link" to="/authentication">
               Sign In
