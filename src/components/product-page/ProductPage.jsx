@@ -1,22 +1,23 @@
 import { React, useContext, useState, useEffect } from "react";
 import "./product-page.styles.scss";
 import { ProductContext } from "../../contexts/ProductContext";
-
+import { CartDropDownContext } from "../../contexts/CartDropDownContext";
 import Product from "../product/Product";
 import { useParams } from "react-router-dom";
 import { Star } from "../star/Star";
-import { AiFillStar } from "react-icons/ai";
+import { AiFillStar, AiFillLike } from "react-icons/ai";
 import { SiAdguard } from "react-icons/si";
 import Button from "../button/Button";
 function ProductPage() {
   const { name } = useParams();
   const { products } = useContext(ProductContext);
-
+  const { cartItems, setCartItems } = useContext(CartDropDownContext);
   const product =
     products && products.find((product) => product.title === name);
   const relatedProduct =
     products &&
     products.filter((p) => p.category === product.category && p.title !== name);
+  console.log(cartItems);
 
   let thumbnailElement;
   if (product) {
@@ -32,7 +33,10 @@ function ProductPage() {
   useEffect(() => {
     setThumbnail(thumbnailElement);
   }, [product]);
-
+  console.log(product);
+  const handleAdd = () => {
+    setCartItems(product);
+  };
   return (
     <>
       {product && (
@@ -57,13 +61,30 @@ function ProductPage() {
               <div>${product.price}</div>
               <div>{product.description}</div>
               <div>
-                <Button buttonType="addToCart">ADD TO CART</Button>
+                <Button buttonType="addToCart" onClick={() => handleAdd()}>
+                  ADD TO CART
+                </Button>
               </div>
             </div>
             <div className="container-right-most">
               <div className="container-guarantee">
                 <p>Shop with confidence</p>
                 <div className="inner-container">
+                  <AiFillLike />
+                  <div>
+                    <p>Top Rated Plus</p>
+                    <p>
+                      Reliable seller, fast shipping, and effortless returns.
+                    </p>
+                    <a
+                      target="_blank"
+                      href="https://portfolio-anhleprogrammer.vercel.app/projects"
+                    >
+                      Learn more
+                    </a>
+                  </div>
+                </div>
+                <div className="inner-container second">
                   <SiAdguard />
                   <div>
                     <p>eBuy Money Back Guarantee</p>

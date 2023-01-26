@@ -3,19 +3,22 @@ import { React, createContext, useState } from "react";
 export const CartDropDownContext = createContext({
   cartOpen: false,
   setCartOpen: () => {},
-  cartItems: [],
+  cartItems: {},
   setCartItems: () => {},
 });
 
 //
 export const CartDropDownProvider = ({ children }) => {
   const [cartOpen, setCartOpen] = useState(false);
-  const [cartItems, setCart] = useState([]);
+  const [cartItems, setCart] = useState({});
   const setCartItems = (product) => {
-    if (cartItems.includes(product)) {
-      cartItems.find(product).quantity += 1;
+    if (cartItems[product] >= 1) {
+      return setCart((prev) => ({
+        ...prev,
+        [product]: cartItems[product] + 1,
+      }));
     } else {
-      setCart((prev) => [...prev, { ...product, quantity: 1 }]);
+      return setCart((prev) => ({ ...prev, [product]: 1 }));
     }
   };
 

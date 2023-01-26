@@ -9,10 +9,12 @@ function CategoryPage() {
   const { products } = useContext(ProductContext);
   return (
     <div className="category-page-container">
-      {products &&
-        products
-          .filter((product) => product.category === name)
-          .map((product) => <Product product={product} />)}
+      <div>
+        {products &&
+          products
+            .filter((product) => product.category === name)
+            .map((product) => <Product product={product} />)}
+      </div>
     </div>
   );
 }
