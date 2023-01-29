@@ -33,7 +33,6 @@ function ProductPage() {
   useEffect(() => {
     setThumbnail(thumbnailElement);
   }, [product]);
-  console.log(product);
   const handleAdd = () => {
     setCartItems(product);
   };

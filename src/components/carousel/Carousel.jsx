@@ -9,7 +9,6 @@ function Carousel({ img }) {
     <img src="./home2.jpg" alt="" />,
     <img src="./home3.jpg" alt="" />,
   ];
-  console.log(hover);
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((index + 1) % slides.length);

@@ -1,7 +1,7 @@
 .dropdown-container {
     position:absolute;
-    width: 280px;
-    height: 340px;
+    min-height: 300px;
+    max-height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,6 +11,8 @@
     top: 90%;
     right: 10px;
     z-index: 5;
+    overflow-y: scroll;
+    overflow-x: clip;
     button {
         margin-top: auto;
     

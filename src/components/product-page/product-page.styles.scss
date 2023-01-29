@@ -46,7 +46,7 @@
 
         .title {
             font-size: larger;
-            font-weight: 900;
+            font-weight: 700;
         }
     }
 
@@ -58,7 +58,7 @@
             padding: 1rem;
 
             >:first-child {
-                font-weight: 900;
+                font-weight: 700;
                 font-size: large
             }
             & .inner-container {
@@ -94,7 +94,7 @@
             padding: 1rem;
 
             & :first-child {
-                font-weight: 900;
+                font-weight: 700;
                 font-size: large;
             }
 
@@ -112,8 +112,9 @@
     }
 
     .container-related {
+        margin-top: 2rem;
         >:first-child {
-            font-weight: 900;
+            font-weight: 700;
             font-size: large;
         }
 

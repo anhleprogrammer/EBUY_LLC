@@ -6,10 +6,10 @@ import { CartDropDownContext } from "../../contexts/CartDropDownContext";
 import CartDropDown from "../../components/cart-dropdown/CartDropDown";
 
 import { signOutUser } from "../../utils/firebase/firebase.utils.js";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { HiOutlineShoppingCart } from "react-icons/hi";
 function Navigation() {
   const { user, setUser } = useContext(UserContext);
-  const { cartOpen, setCartOpen } = useContext(CartDropDownContext);
+  const { cartOpen, setCartOpen, cartItems } = useContext(CartDropDownContext);
 
   const signOutHandler = async () => {
     const res = await signOutUser();
@@ -38,10 +38,11 @@ function Navigation() {
             </Link>
           )}
           <div className="cart-container">
-            <AiOutlineShoppingCart
+            <HiOutlineShoppingCart
               className="cart-icon"
               onClick={() => setCartOpen(!cartOpen)}
             />
+            <p>{cartItems.length}</p>
           </div>
         </div>
         {cartOpen && <CartDropDown />}

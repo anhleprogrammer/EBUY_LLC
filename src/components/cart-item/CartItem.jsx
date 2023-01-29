@@ -4,18 +4,22 @@ import { CartDropDownContext } from "../../contexts/CartDropDownContext";
 
 function CartItem() {
   const { cartItems } = useContext(CartDropDownContext);
-  console.log(cartItems);
+
   //quantity increase when item have same name
   return (
     <div className="cart-item-container">
-      {Object.keys(cartItems).map((item) => {
-        console.log(item);
+      {cartItems.map((item) => (
         <div key={item.id}>
-          <p>{item.title}</p>
-          <a>Quantity</a>
-          <a> x ${item.price}</a>
-        </div>;
-      })}
+          <div className="cart-img-container">
+            <img src={item.images[0]} alt="" />
+          </div>
+          <div className="cart-info-container">
+            <p>{item.title}</p>
+            <p>Quantity: {item.quantity}</p>
+            <p>Price: ${item.price}</p>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

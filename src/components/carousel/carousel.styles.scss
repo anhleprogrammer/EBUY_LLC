@@ -15,36 +15,36 @@
     .left {
         left: 1rem; 
         position: absolute;
-        top: 30%;
+        top: 40%;
         font-size: 69px;
         color: white;
-        cursor: pointer;
+        cursor: pointer;       
+         font-weight: 100;
+
     
      }
     .right {
         right: 1rem; 
         position: absolute;
-        top: 30%;
+        top: 40%;
         font-size: 69px;
         color: white;
         cursor: pointer;
+        font-weight: 100;
        
      }
-    .text-container {
-        position: absolute;
-        top:15%;
-    }
+   
 
     .shopnow-container {
         position: absolute;
         width: 250px;
-        top:35%;
+        top:40%;
         left: 50%;
         right: 50%;
         transform: translateX(-40%);
         font-size: 49px;
         color: white;
-        font-weight: bolder;
+        font-weight: 600;
         cursor: pointer;
   
     }

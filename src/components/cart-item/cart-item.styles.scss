@@ -1,8 +1,34 @@
 .cart-item-container {
+    font-size: small;
     >div {
-        color: black;
-        >p {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: flex-start;
+        padding: 0.4rem;
+         .cart-img-container {
+            color: black;
+              img {
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+             }
+             margin-right: 1rem;
+             cursor: pointer;
 
         }
+        .cart-info-container {
+            color: black;
+            :first-child {
+                cursor: pointer;
+            }
+            :nth-child(2), :nth-child(3) {
+                color: #868e96;
+            }
+         }
+        &:hover {
+            background-color:#f1f3f5;
+        }
     }
+ 
+
 }
