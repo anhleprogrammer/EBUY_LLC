@@ -1,34 +1,74 @@
 .cart-item-container {
     font-size: small;
+    width: 320px;
+    color: black;        
+    font-weight: 400;
+    >:first-child {
+        text-align: center;
+        font-size: large;
+        border-bottom: 0.1px solid;
+        padding-bottom: 1rem;
+    }
     >div {
-        margin-bottom: 1rem;
         display: flex;
         align-items: flex-start;
-        padding: 0.4rem;
-         .cart-img-container {
+        padding: 1rem;
+        border-bottom: 0.1px solid;
+        cursor: pointer;
+        .cart-img-container {
             color: black;
+            height: 80px;
               img {
                 width: 80px;
-                height: 80px;
+                height: 100%;
                 object-fit: cover;
              }
              margin-right: 1rem;
-             cursor: pointer;
-
         }
         .cart-info-container {
             color: black;
-            :first-child {
-                cursor: pointer;
+            overflow: hidden;
+            >:first-child {    
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                cursor: pointer;     
+                font-size: medium;
+             }
+            :nth-child(2),:nth-child(3) {
+                color: rgb(150, 150, 150);
+              
             }
-            :nth-child(2), :nth-child(3) {
-                color: #868e96;
+            :last-child {
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;   
+                select {
+                    border-radius: 0.2rem;
+                    padding: 0.2rem;
+                }
             }
+         
          }
         &:hover {
             background-color:#f1f3f5;
         }
     }
- 
-
+    >:last-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: x-large;
+        margin-bottom: 1rem ;
+        font-weight: 100;
+        border-bottom: 0.1px solid;
+        cursor: default;
+        >:first-child {
+            font-style:italic;
+            font-size: medium;
+        }
+        &:hover {
+            background-color:white;
+        }
+    }
 }
