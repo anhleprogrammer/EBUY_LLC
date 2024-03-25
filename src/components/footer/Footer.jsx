@@ -10,15 +10,6 @@ function Footer() {
   return (
     <div className="footer-container">
       <div>
-        <h3>Buy and Sell on EbuyLLC</h3>
-        <ul>
-          <li>How to Buy</li>
-          <li>How to Sell</li>
-          <li>Memberships</li>
-          <li>Partner Program</li>
-        </ul>
-      </div>
-      <div>
         <h3>Help</h3>
         <ul>
           <li>Contact Us</li>
@@ -31,7 +22,7 @@ function Footer() {
         {" "}
         <h3>Company</h3>
         <ul>
-          <li>About EbuyLLC</li>
+          <li>About ECommerce</li>
           <li>Careers</li>
           <li>Corporate Information</li>
         </ul>

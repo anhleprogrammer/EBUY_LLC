@@ -20,7 +20,7 @@ function Navigation() {
     <>
       <div className="navigation">
         <Link className="logo-container" to="/">
-          <p className="logo">EbuyLLC</p>
+          <p className="logo">ECommerce</p>
         </Link>
         {/* <input className="search-box" /> */}
         <div className="nav-links-container">

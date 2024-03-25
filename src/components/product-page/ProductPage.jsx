@@ -97,17 +97,6 @@ function ProductPage() {
                   </div>
                 </div>
               </div>
-              <div className="container-seller">
-                <p>Seller Information</p>
-                <a
-                  className="seller-name"
-                  target="_blank"
-                  href="https://portfolio-anhleprogrammer.vercel.app/projects"
-                >
-                  anhleprogrammer (9000 <AiFillStar className="star" />)
-                </a>
-                <p>100% Positive feedback</p>
-              </div>
             </div>
           </div>
           <div className="container-related">
